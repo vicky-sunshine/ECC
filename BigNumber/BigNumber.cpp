@@ -1,8 +1,10 @@
 #include "BigNumber.hpp"
+
 // constructor
 BigNumber::BigNumber() {
   BigNumber(0);
 }
+
 BigNumber::BigNumber(long long input_number) {
   long long unsign_number;
 
@@ -19,6 +21,7 @@ BigNumber::BigNumber(long long input_number) {
   }
   data.push_back(unsign_number);
 }
+
 BigNumber::BigNumber(const std::string& input_string) {
   sgn = !(input_string.front() == '-');
 
@@ -32,22 +35,27 @@ BigNumber::BigNumber(const std::string& input_string) {
     }
   }
 }
+
 BigNumber::BigNumber(bool input_sgn, const std::vector<int8_t>& input_data) {
   sgn = input_sgn;
   data = input_data;
 }
+
 BigNumber::BigNumber(bool input_sgn, std::vector<int8_t>&& input_data) {
   sgn = input_sgn;
   data = std::move(input_data);
 }
 
+
 // logical operators
 bool operator==(const BigNumber& lhs, const BigNumber& rhs) {
   return (lhs.sgn == rhs.sgn) && (BigNumber::abs_compare(lhs, rhs) == EQUAL);
 }
+
 bool operator!=(const BigNumber& lhs, const BigNumber& rhs) {
   return !(lhs == rhs);
 }
+
 bool operator>(const BigNumber& lhs, const BigNumber& rhs) {
   int abs_cmp;
 
@@ -58,17 +66,21 @@ bool operator>(const BigNumber& lhs, const BigNumber& rhs) {
     return lhs.sgn;
   }
 }
+
 bool operator<(const BigNumber& lhs, const BigNumber& rhs) {
   return rhs > lhs;
 }
+
 bool operator>=(const BigNumber& lhs, const BigNumber& rhs) {
   return !(lhs < rhs);
 }
+
 bool operator<=(const BigNumber& lhs, const BigNumber& rhs) {
   return !(lhs > rhs);
 }
 
-//output format
+
+// private method
 int BigNumber::abs_compare(const BigNumber& lhs, const BigNumber& rhs) {
   if (lhs.data.size() > rhs.data.size()) {
     return BIGGER;
@@ -87,11 +99,13 @@ int BigNumber::abs_compare(const BigNumber& lhs, const BigNumber& rhs) {
 
   return EQUAL;
 }
+
 void BigNumber::discard_leading_zero(std::vector<int8_t>& input) {
   while (input.back() == 0 && input.size()!=1) {
     input.pop_back();
   }
 }
+
 
 // arithmetic operators
 const BigNumber operator+(const BigNumber& lhs, const BigNumber& rhs) {
@@ -145,6 +159,7 @@ const BigNumber operator+(const BigNumber& lhs, const BigNumber& rhs) {
 
   return BigNumber(sgn, std::move(abs_result));
 }
+
 const BigNumber operator-(const BigNumber& lhs, const BigNumber& rhs) {
   bool sgn;
   std::vector<int8_t> abs_result;
@@ -191,6 +206,7 @@ const BigNumber operator-(const BigNumber& lhs, const BigNumber& rhs) {
 
   return BigNumber(sgn, std::move(abs_result));
 }
+
 const BigNumber operator*(const BigNumber& lhs, const BigNumber& rhs) {
   bool sgn;
   std::vector<int8_t> abs_result;
@@ -215,6 +231,7 @@ const BigNumber operator*(const BigNumber& lhs, const BigNumber& rhs) {
 
   return BigNumber(sgn, abs_result);
 }
+
 const BigNumber operator/(const BigNumber& lhs, const BigNumber& rhs) {
   BigNumber temp(0);
   BigNumber remainder(true, lhs.data);
@@ -247,6 +264,7 @@ const BigNumber operator/(const BigNumber& lhs, const BigNumber& rhs) {
 
   return quotient;
 }
+
 const BigNumber operator%(const BigNumber& lhs, const BigNumber& rhs) {
   BigNumber temp(0);
   BigNumber remainder(true, lhs.data);

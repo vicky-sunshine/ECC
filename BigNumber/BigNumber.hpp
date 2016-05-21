@@ -13,8 +13,10 @@
 // Big number class definition
 class BigNumber{
 private:
+  // member
   bool sgn;
   std::vector<int8_t> data;
+  // private handle method
   static int abs_compare(const BigNumber&, const BigNumber&);
   static void discard_leading_zero(std::vector<int8_t>&);
 

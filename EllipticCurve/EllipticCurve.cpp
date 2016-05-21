@@ -1,29 +1,7 @@
 #include "EllipticCurve.hpp"
 
 
-Point::Point() {
-  this->x = 0;
-  this->y = 0;
-}
-Point::Point(const BigNumber& x, const BigNumber& y) {
-  this->x = x;
-  this->y = y;
-}
-// ouput format for Point
-std::ostream& operator<<(std::ostream& os, const Point& p) {
-  os << "(" << p.x << ", " << p.y << ")";
-  return os;
-}
-
-bool operator==(const Point& lhs, const Point& rhs) {
-  return (lhs.x == rhs.x) && (lhs.y == rhs.y);
-}
-
-bool operator!=(const Point& lhs, const Point& rhs) {
-  return !(lhs == rhs);
-}
-
-// EllipticCurve class definition
+// EllipticCurve class
 EllipticCurve::EllipticCurve(BigNumber& mod_prime, BigNumber& a, BigNumber& b, Point& generator, BigNumber& order) {
   this->mod_prime = mod_prime;
   this->a = a;
@@ -93,8 +71,8 @@ const std::vector<Point> EllipticCurve::elgamel_encrypt(Point m, Point public_ke
   Point c1 = EllipticCurve::mult_n(generator, nk);
   Point c2 = EllipticCurve::addition(m, EllipticCurve::mult_n(public_key, nk));
   
-  std::cout << c1 << std::endl;
-  std::cout << c2 << std::endl;
+  // std::cout << c1 << std::endl;
+  // std::cout << c2 << std::endl;
   cipher.push_back(c1);
   cipher.push_back(c2);
   
