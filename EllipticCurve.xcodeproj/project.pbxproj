@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F44CBC081CF0297100FF0807 /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F44CBC061CF0297100FF0807 /* Point.cpp */; };
+		F4A0D95E1CF084F500C151D3 /* FiniteFieldElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F4A0D95C1CF084F500C151D3 /* FiniteFieldElement.cpp */; };
 		F4A8292E1CE72BB0006ABE0F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F4A8292D1CE72BB0006ABE0F /* main.cpp */; };
 		F4A829371CE72BD1006ABE0F /* BigNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F4A829351CE72BD1006ABE0F /* BigNumber.cpp */; };
 		F4A8293D1CE72E1F006ABE0F /* EllipticCurve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F4A8293B1CE72E1F006ABE0F /* EllipticCurve.cpp */; };
@@ -28,6 +29,8 @@
 /* Begin PBXFileReference section */
 		F44CBC061CF0297100FF0807 /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Point.cpp; path = Point/Point.cpp; sourceTree = SOURCE_ROOT; };
 		F44CBC071CF0297100FF0807 /* Point.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Point.hpp; path = Point/Point.hpp; sourceTree = SOURCE_ROOT; };
+		F4A0D95C1CF084F500C151D3 /* FiniteFieldElement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FiniteFieldElement.cpp; path = FiniteFieldElement/FiniteFieldElement.cpp; sourceTree = SOURCE_ROOT; };
+		F4A0D95D1CF084F500C151D3 /* FiniteFieldElement.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = FiniteFieldElement.hpp; path = FiniteFieldElement/FiniteFieldElement.hpp; sourceTree = SOURCE_ROOT; };
 		F4A8292A1CE72BB0006ABE0F /* EllipticCurve */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EllipticCurve; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A8292D1CE72BB0006ABE0F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		F4A829351CE72BD1006ABE0F /* BigNumber.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BigNumber.cpp; sourceTree = "<group>"; };
@@ -57,11 +60,22 @@
 			path = EllipticCurve;
 			sourceTree = "<group>";
 		};
+		F4A0D95F1CF084FB00C151D3 /* FiniteFieldElement */ = {
+			isa = PBXGroup;
+			children = (
+				F4A0D95C1CF084F500C151D3 /* FiniteFieldElement.cpp */,
+				F4A0D95D1CF084F500C151D3 /* FiniteFieldElement.hpp */,
+			);
+			name = FiniteFieldElement;
+			path = BigNumber;
+			sourceTree = "<group>";
+		};
 		F4A829211CE72BB0006ABE0F = {
 			isa = PBXGroup;
 			children = (
-				F44CBC091CF0297900FF0807 /* Point */,
 				F4A829341CE72BD1006ABE0F /* BigNumber */,
+				F4A0D95F1CF084FB00C151D3 /* FiniteFieldElement */,
+				F44CBC091CF0297900FF0807 /* Point */,
 				F4A8292C1CE72BB0006ABE0F /* EllipticCurve */,
 				F4A8292B1CE72BB0006ABE0F /* Products */,
 			);
@@ -152,6 +166,7 @@
 			files = (
 				F44CBC081CF0297100FF0807 /* Point.cpp in Sources */,
 				F4A8293D1CE72E1F006ABE0F /* EllipticCurve.cpp in Sources */,
+				F4A0D95E1CF084F500C151D3 /* FiniteFieldElement.cpp in Sources */,
 				F4A8292E1CE72BB0006ABE0F /* main.cpp in Sources */,
 				F4A829371CE72BD1006ABE0F /* BigNumber.cpp in Sources */,
 			);
