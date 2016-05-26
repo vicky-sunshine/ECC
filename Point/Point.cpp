@@ -7,7 +7,7 @@ Point::Point() {
   this->x = 0;
   this->y = 0;
 }
-Point::Point(const BigNumber& x, const BigNumber& y) {
+Point::Point(const FiniteFieldElement& x, const FiniteFieldElement& y) {
   this->x = x;
   this->y = y;
 }
@@ -28,6 +28,10 @@ bool operator!=(const Point& lhs, const Point& rhs) {
  Output Format
  */
 std::ostream& operator<<(std::ostream& os, const Point& p) {
-  os << "(" << p.x << ", " << p.y << ")";
+  if (p.x == 0 && p.y == 0) {
+    os << "ZERO";
+  } else {
+    os << "(" << p.x << ", " << p.y << ")";
+  }
   return os;
 }

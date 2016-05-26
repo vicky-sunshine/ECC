@@ -3,16 +3,17 @@
 
 #include <iostream>
 #include "BigNumber.hpp"
+#include "FiniteFieldElement.hpp"
 
 class Point{
 public:
   // member
-  BigNumber x;
-  BigNumber y;
+  FiniteFieldElement x;
+  FiniteFieldElement y;
   
   // constructors
   Point();
-  Point(const BigNumber& x, const BigNumber& y);
+  Point(const FiniteFieldElement& x, const FiniteFieldElement& y);
   
   // logical operation
   friend bool operator==(const Point&, const Point&);
