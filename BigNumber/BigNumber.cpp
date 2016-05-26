@@ -312,7 +312,7 @@ std::ostream& operator<<(std::ostream& os, const BigNumber& rhs) {
     // i is a pointer, point to a certain position in the vector (rhs.data)
     // *i is the value store in THAT position
     if (*i >= 10) {
-      os << static_cast<char>(*i + 'a' - 10); // 10 -> 'a'
+      os << static_cast<char>(*i + 'A' - 10); // 10 -> 'a'
     } else {
       os << static_cast<char>(*i + '0'); // 1 -> '1'
     }
